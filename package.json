@@ -1,15 +1,19 @@
 {
-  "name": "react-tabs",
+  "name": "faster-react-tabs",
   "version": "0.0.1",
-  "description": "A faster React tab component that doesn't use DOM refs.",
+  "description": "A faster React tab component that doesn't use DOM refs. Written in ES6, transpiles down to ES5",
   "main": "app.jsx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edenspiekermann/faster-react-tabs.git"
+  },
   "scripts": {
-    "build": "rm -Rf dist/* && webpack --progress --colors && cp index.html dist/ && mkdir -p dist/css && stylus styles/index.styl -o dist/css/ -u autoprefixer-stylus",
+    "build": "rm -Rf dist/* && webpack --optimize-minimize --progress --colors && cp index.html dist/ && mkdir -p dist/css && stylus styles/index.styl -o dist/css/ -u autoprefixer-stylus",
     "watch": "webpack-dev-server --content-base dist/ && stylus styles/index.styl -o dist/css/ -u autoprefixer-stylus --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Eric Schaefer, Max Hoffman",
-  "license": "BSD-2-Clause",
+  "author": "edenspiekermann",
+  "license": "MIT",
   "dependencies": {
     "envify": "^3.4.0",
     "react": "^0.13.1"
@@ -24,5 +28,12 @@
     "stylus": "^0.50.0",
     "webpack": "^1.8.4",
     "webpack-dev-server": "^1.8.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "react ui",
+    "es6",
+    "tabs"
+  ]
 }
