@@ -5,6 +5,8 @@ var App = React.createClass({
 
   render() {
 
+    //// EXAMPLE SET OF TAB ITEMS. REPLACE THIS WITH YOURS.
+    ////
     var sections = [
       {
         title: "Tab 1",
@@ -19,6 +21,8 @@ var App = React.createClass({
         content: "Tab 3 content"
       }
     ];
+    ////
+    ////
 
     return (
       <div>
