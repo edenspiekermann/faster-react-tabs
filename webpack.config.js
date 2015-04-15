@@ -4,7 +4,8 @@ module.exports = {
   cache: true,
   entry: './app',
   output: {
-    filename: 'dist/bundle.js'
+    filename: 'dist/bundle.min.js',
+    filename: 'bundle.min.js'
   },
   module: {
     loaders: [
