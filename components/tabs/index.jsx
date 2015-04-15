@@ -7,7 +7,10 @@ var Tab = require('../tab');
 var Tabs = React.createClass({
 
   propTypes: {
-    sections: React.PropTypes.array.isRequired
+    sections: React.PropTypes.oneOfType([
+      React.PropTypes.array,
+      React.PropTypes.object
+    ]).isRequired
   },
 
   getInitialState() {
