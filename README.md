@@ -1,4 +1,5 @@
-# how to use
+# How to get running
 
 * `npm install`
-* `npm start`
+* `npm run build`
+* `npm run watch`
