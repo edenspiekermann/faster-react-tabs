@@ -9,6 +9,7 @@
 `npm i faster-react-tabs --save` to add to your project.
 
 **Get the example running locally:**
+
 `cd faster-react-tabs/`
 
 * `npm install`
