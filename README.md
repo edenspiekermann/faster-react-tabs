@@ -10,7 +10,7 @@
 
 **Get the example running locally:**
 
-`cd faster-react-tabs/`
+`$ cd faster-react-tabs/`
 
 * `npm install`
 * `npm run build`
