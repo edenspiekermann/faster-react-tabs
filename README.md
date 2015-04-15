@@ -5,10 +5,11 @@
 - ES6, transpiles down to ES5.
 - If your app renders server-side, then the tabs can just render as a list for non-JS users.
 
-##Install
+## Install
 `npm i faster-react-tabs --save` to add to your project.
 
 **Get the example running locally:**
+`cd faster-react-tabs/`
 
 * `npm install`
 * `npm run build`
