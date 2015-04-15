@@ -46,7 +46,7 @@ var Tabs = React.createClass({
     }
 
     return (
-      <div>
+      <div className='tabs'>
         <nav>
           <ul className='tabs__menu'>
             {this.props.sections.map((section, index) =>
