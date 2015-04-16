@@ -8,8 +8,8 @@
     "url": "https://github.com/edenspiekermann/faster-react-tabs.git"
   },
   "scripts": {
-    "build": "rm -Rf dist/* && webpack --optimize-minimize --progress --colors && cp index.html dist/ && cp bundle.min.js dist/ && stylus stylus/index.styl -o css/ -u autoprefixer-stylus && mkdir -p dist/css && cp css/* dist/css/",
-    "watch": "webpack-dev-server --content-base dist/ && stylus stylus/index.styl -o css/ -u autoprefixer-stylus --watch",
+    "build": "rm -Rf dist/* && webpack --optimize-minimize --progress --colors && cp index.html dist/ && cp bundle.min.js dist/ && node-sass --output-style compressed scss/index.scss css/index.css && mkdir -p dist/css && cp css/* dist/css/",
+    "watch": "webpack-dev-server --content-base dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "edenspiekermann",
@@ -25,6 +25,7 @@
     "classnames": "^1.2.0",
     "es6-symbol": "^2.0.1",
     "jsx-loader": "^0.13.1",
+    "node-sass": "^2.1.1",
     "stylus": "^0.50.0",
     "webpack": "^1.8.4",
     "webpack-dev-server": "^1.8.0"
