@@ -1,4 +1,7 @@
 # Simple + Clean React Tabs
+
+[![npm version](https://badge.fury.io/js/faster-react-tabs.svg)](http://badge.fury.io/js/faster-react-tabs)
+
 [Demo here](http://edenspiekermann.github.io/faster-react-tabs/)
 
 - Written the "React Way" without hitting the DOM with `refs`.
