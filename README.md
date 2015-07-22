@@ -9,18 +9,19 @@
 - If your app renders server-side, then the tabs can just render as a list for non-JS users.
 
 ## Install
-`npm i faster-react-tabs --save` to add to your project.
+`$ npm i faster-react-tabs --save` to add to your project.
 
 **Get the example running locally:**
 
-`$ cd faster-react-tabs/`
-
-* `npm install`
-* `npm run build`
-* `npm run watch`
+```
+$ cd faster-react-tabs/
+$ npm install
+$ npm run build
+$ npm run watch
+```
 
 ## Example: Drop-in `Tabs` component
-`npm i faster-react-tabs --save`
+`$ npm i faster-react-tabs --save`
 
 ```javascript
 'use strict'
