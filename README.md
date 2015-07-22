@@ -25,13 +25,13 @@ $ npm run watch
 
 ```javascript
 'use strict'
-var React = require('react');
-var Tabs = require('faster-react-tabs');
+import React from 'react';
+import Tabs from 'faster-react-tabs';
 
-var YourThing = React.createClass({
+const YourThing = React.createClass({
 
   render() {
-    var sections = [
+    const sections = [
       {
         title: "Tab 1",
         content: "Tab 1 content"
@@ -55,6 +55,6 @@ var YourThing = React.createClass({
 
 });
 
-module.exports = YourThing;
+export default YourThing;
 ```
 

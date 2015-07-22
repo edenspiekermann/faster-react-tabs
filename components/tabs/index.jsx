@@ -71,4 +71,4 @@ const Tabs = React.createClass({
 
 });
 
-module.exports = Tabs;
+export default Tabs;
