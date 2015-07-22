@@ -1,7 +1,7 @@
 "use strict";
-var React = require('react');
+import React from 'react';
 
-var Tab = React.createClass({
+const Tab = React.createClass({
 
   render() {
     return (
