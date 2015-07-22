@@ -1,13 +1,13 @@
-var React = require('react');
-var Tabs = require('./components/tabs/index.jsx');
+import React from 'react';
+import Tabs from './components/tabs/index.jsx';
 
-var App = React.createClass({
+const App = React.createClass({
 
   render() {
 
     //// EXAMPLE SET OF TAB ITEMS. REPLACE THIS WITH YOURS.
     ////
-    var sections = [
+    const sections = [
       {
         title: "Tab 1",
         content: "Tab 1 content"
