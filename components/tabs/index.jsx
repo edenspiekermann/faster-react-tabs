@@ -1,10 +1,10 @@
 'use strict';
-var React = require('react');
-var classnames = require('classnames');
+import React from 'react';
+import classnames from 'classnames';
 
-var Tab = require('../tab');
+import Tab from '../tab';
 
-var Tabs = React.createClass({
+const Tabs = React.createClass({
 
   propTypes: {
     sections: React.PropTypes.oneOfType([
@@ -22,6 +22,10 @@ var Tabs = React.createClass({
 
   componentDidMount() {
     this.setState({ jsEnabled: true });
+  },
+
+  showSection(index) {
+    this.setState({ visibleIndex: index});
   },
 
   render() {
@@ -63,10 +67,6 @@ var Tabs = React.createClass({
         </Tab>
       </div>
     );
-  },
-
-  showSection(index) {
-    this.setState({ visibleIndex: index});
   }
 
 });
