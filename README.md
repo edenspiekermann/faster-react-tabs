@@ -27,6 +27,7 @@ $ npm run watch
 'use strict'
 import React from 'react';
 import Tabs from 'faster-react-tabs';
+import ExampleContent from '../components/example-content/index.jsx';
 
 const YourThing = React.createClass({
 
@@ -34,7 +35,7 @@ const YourThing = React.createClass({
     const sections = [
       {
         title: "Tab 1",
-        content: "Tab 1 content"
+        content: <ExampleContent image='images/1.jpeg' text='This is in tab 1. It is a whole other component! Entire components can be passed down into each tab.' />
       },
       {
         title: "Tab 2",
