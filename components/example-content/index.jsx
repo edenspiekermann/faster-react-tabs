@@ -6,7 +6,7 @@ const ExampleContent = React.createClass({
     return (
       <div className="example-content">
         <h4>{this.props.text}</h4>
-        <img src='images/1.jpeg' alt="I'm an image" />
+        <img src={this.props.image} alt="I'm an image" />
       </div>
     );
   }

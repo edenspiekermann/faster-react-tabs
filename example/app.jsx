@@ -12,7 +12,7 @@ const App = React.createClass({
     const sections = [
       {
         title: "Tab 1",
-        content: <ExampleContent text='This is in tab 1' />
+        content: <ExampleContent image='images/1.jpeg' text='This is in tab 1. It is a whole other component! Entire components can be passed down into each tab.' />
       },
       {
         title: "Tab 2",
