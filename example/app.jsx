@@ -1,6 +1,7 @@
 "use strict";
 import React from 'react';
 import Tabs from '../components/tabs/index.jsx';
+import ExampleContent from '../components/example-content/index.jsx';
 
 const App = React.createClass({
 
@@ -11,7 +12,7 @@ const App = React.createClass({
     const sections = [
       {
         title: "Tab 1",
-        content: "Tab 1 content"
+        content: <ExampleContent text='This is in tab 1' />
       },
       {
         title: "Tab 2",

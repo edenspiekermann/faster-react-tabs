@@ -8,7 +8,7 @@
     "url": "https://github.com/edenspiekermann/faster-react-tabs.git"
   },
   "scripts": {
-    "build": "rm -Rf dist/ && mkdir dist && webpack --optimize-minimize --progress --colors && cp example/index.html dist/ && cp example/bundle.min.js dist/ && node-sass --output-style compressed example/scss/index.scss example/css/index.css && mkdir -p dist/css && cp example/css/* dist/css/",
+    "build": "rm -Rf dist/ && mkdir dist && webpack --optimize-minimize --progress --colors && cp example/index.html dist/ && cp example/bundle.min.js dist/ && node-sass --output-style compressed example/scss/index.scss example/css/index.css && mkdir -p dist/css && cp example/css/* dist/css/ && mkdir -p dist/images && cp example/images/* dist/images/",
     "watch": "webpack-dev-server --content-base dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
