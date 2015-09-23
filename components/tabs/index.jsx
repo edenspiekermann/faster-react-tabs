@@ -1,4 +1,3 @@
-'use strict';
 import React from 'react';
 import classnames from 'classnames';
 
@@ -25,7 +24,7 @@ const Tabs = React.createClass({
   },
 
   showSection(index) {
-    this.setState({ visibleIndex: index});
+    this.setState({ visibleIndex: index });
   },
 
   render() {
@@ -34,7 +33,7 @@ const Tabs = React.createClass({
       return (
         <div className="tabs">
           {this.props.sections.map((section, index) =>
-            <Tab withTitle={true} title={section.title} key={index}>
+            <Tab title={section.title} key={index}>
               {section.content}
             </Tab>
           )}
@@ -62,7 +61,8 @@ const Tabs = React.createClass({
             )}
           </ul>
         </nav>
-        <Tab title={this.props.sections[this.state.visibleIndex].title}>
+
+        <Tab>
           {this.props.sections[this.state.visibleIndex].content}
         </Tab>
       </div>

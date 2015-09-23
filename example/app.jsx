@@ -1,11 +1,12 @@
+"use strict";
 import React from 'react';
-import Tabs from './components/tabs/index.jsx';
+import Tabs from '../components/tabs/index.jsx';
 
 const App = React.createClass({
 
   render() {
 
-    //// EXAMPLE SET OF TAB ITEMS. REPLACE THIS WITH YOURS.
+    //// EXAMPLE SET OF TAB ITEMS. REPLACE THIS CONTENT WITH YOURS.
     ////
     const sections = [
       {

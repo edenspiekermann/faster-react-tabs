@@ -1,14 +1,20 @@
-"use strict";
 import React from 'react';
 
 const Tab = React.createClass({
 
+  propTypes: {
+    title: React.PropTypes.string
+  },
+
   render() {
+    const { title } = this.props;
+
     return (
       <div className="tab">
-        {this.props.withTitle ?
-          <div>{this.props.title}</div>
+        {title ?
+          <div>{title}</div>
         : null}
+
         {this.props.children}
       </div>
     );

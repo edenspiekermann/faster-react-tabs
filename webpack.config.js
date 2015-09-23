@@ -2,9 +2,9 @@ var jsxLoaders = ['babel-loader?stage=1'];
 
 module.exports = {
   cache: true,
-  entry: './app',
+  entry: './example/app',
   output: {
-    filename: 'bundle.min.js'
+    filename: 'example/bundle.min.js'
   },
   devServer: {
     noInfo: true,
@@ -13,7 +13,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.jsx$/, exclude: /amaphiko-web\/node_modules/, loaders: jsxLoaders },
+      { test: /\.jsx$/, loaders: jsxLoaders },
     ]
   },
   resolve: {
