@@ -9,11 +9,14 @@
 - If your app renders server-side, then the tabs can just render as a list for non-JS users.
 
 ## Install
-`$ npm i faster-react-tabs --save` to add to your project.
+
+```sh
+$ npm i faster-react-tabs --save
+```
 
 **Get the example running locally:**
 
-```
+```sh
 $ cd faster-react-tabs/
 $ npm install
 $ npm run build
@@ -21,7 +24,10 @@ $ npm run watch
 ```
 
 ## Example: Drop-in `Tabs` component
-`$ npm i faster-react-tabs --save`
+
+```sh
+$ npm i faster-react-tabs --save
+```
 
 ```javascript
 'use strict'
@@ -34,16 +40,16 @@ const YourThing = React.createClass({
   render() {
     const sections = [
       {
-        title: "Tab 1",
+        title: 'Tab 1',
         content: <ExampleContent image='images/1.jpeg' text='This is in tab 1. It is a whole other component! Entire components can be passed down into each tab.' />
       },
       {
-        title: "Tab 2",
-        content: "Tab 2 content"
+        title: 'Tab 2',
+        content: 'Tab 2 content'
       },
       {
-        title: "Tab 3",
-        content: "Tab 3 content"
+        title: 'Tab 3',
+        content: 'Tab 3 content'
       }
     ];
 
@@ -58,4 +64,3 @@ const YourThing = React.createClass({
 
 export default YourThing;
 ```
-
