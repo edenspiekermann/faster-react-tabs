@@ -22,12 +22,14 @@ const Tab = React.createClass({
     return (
       <li
         id={`tab-${id}`}
-        role='tab'
-        aria-controls={`panel-${id}`}
-        aria-selected={isSelected}>
-          <a href={`#panel-${id}`}>
-            {children}
-          </a>
+        role='presentation'>
+        <a
+          href={`#panel-${id}`}
+          role='tab'
+          aria-controls={`panel-${id}`}
+          aria-selected={isSelected}>
+          {children}
+        </a>
       </li>
     );
   }
