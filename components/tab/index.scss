@@ -1,14 +1,14 @@
-li[role='tab'] {
+li[role='presentation'] {
   display: inline-block;
   cursor: pointer;
 }
 
-li[role='tab'][aria-selected='true'] {
-  font-weight: bold;
-}
-
-li[role='tab'] > a {
+a[role='tab'] {
   text-decoration: none;
   display: block;
   color: inherit;
+}
+
+a[role='tab'][aria-selected='true'] {
+  font-weight: bold;
 }
