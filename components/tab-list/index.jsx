@@ -15,7 +15,7 @@ const TabList = React.createClass({
   },
 
   render () {
-    const { selectedIndex, handleClick, sections } = this.props;
+    const { sections, handleClick, selectedIndex } = this.props;
 
     return (
       <ul role='tablist'>

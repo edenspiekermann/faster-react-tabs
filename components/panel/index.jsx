@@ -2,10 +2,12 @@ import React from 'react';
 
 const Panel = React.createClass({
   propTypes: {
-    id: React.PropTypes.string.isRequired,
-    visible: React.PropTypes.bool,
-    title: React.PropTypes.string,
-    children: React.PropTypes.node
+    children: React.PropTypes.node.isRequired,
+    id: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]).isRequired,
+    visible: React.PropTypes.bool
   },
 
   getDefaultProps () {
@@ -15,7 +17,7 @@ const Panel = React.createClass({
   },
 
   render () {
-    const { id, title, visible, children } = this.props;
+    const { id, visible, children } = this.props;
 
     return (
       <div
@@ -23,7 +25,6 @@ const Panel = React.createClass({
         id={`panel-${id}`}
         aria-labelledby={`tab-${id}`}
         aria-hidden={!visible}>
-          {title}
           {children}
       </div>
     );

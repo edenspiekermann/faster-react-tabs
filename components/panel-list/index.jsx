@@ -4,19 +4,19 @@ import Panel from '../panel';
 const TabList = React.createClass({
   propTypes: {
     sections: React.PropTypes.array.isRequired,
-    selectedIndex: React.PropTypes.number.isRequired,
-    jsEnabled: React.PropTypes.bool
+    selectedIndex: React.PropTypes.number,
+    JS: React.PropTypes.bool
   },
 
   getDefaultProps () {
     return {
       selectedIndex: 0,
-      jsEnabled: true
+      JS: true
     };
   },
 
   render () {
-    const { selectedIndex, sections, jsEnabled } = this.props;
+    const { sections, selectedIndex, JS } = this.props;
 
     return (
       <div>
@@ -24,8 +24,10 @@ const TabList = React.createClass({
           <Panel
             key={`panel-${index}`}
             id={section.id || index}
-            visible={jsEnabled ? selectedIndex === index : true}
-            title={jsEnabled ? null : section.title}>
+            visible={JS ? selectedIndex === index : true}>
+              {!JS
+                ? <span>section.title</span>
+                : null}
               {section.content}
           </Panel>
         )}
