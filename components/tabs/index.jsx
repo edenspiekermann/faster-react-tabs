@@ -1,14 +1,10 @@
 import React from 'react';
-import classnames from 'classnames';
-
+import Panel from '../tab-panel';
 import Tab from '../tab';
 
 const Tabs = React.createClass({
   propTypes: {
-    sections: React.PropTypes.oneOfType([
-      React.PropTypes.array,
-      React.PropTypes.object
-    ]).isRequired
+    sections: React.PropTypes.array.isRequired
   },
 
   getInitialState () {
@@ -27,42 +23,50 @@ const Tabs = React.createClass({
   },
 
   render () {
+    const { sections } = this.props;
+
     if (!this.state.jsEnabled) {
       return (
         <div className='tabs'>
-          {this.props.sections.map((section, index) =>
-            <Tab title={section.title} key={index}>
-              {section.content}
-            </Tab>
+          {sections.map((section, index) =>
+            <Panel
+              key={`panel-${index}`}
+              className='tab'
+              id={section.id || index}
+              title={section.title}>
+                {section.content}
+            </Panel>
           )}
         </div>
       );
     }
 
-    function classes (index) {
-      return classnames({
-        'tabs__item': true,
-        'tabs__item--active': this.state.visibleIndex === index
-      });
-    }
-
     return (
       <div className='tabs'>
-        <nav>
-          <ul className='tabs__menu'>
-            {this.props.sections.map((section, index) =>
-              <li key={index} className={classes.call(this, index)}>
-                <button className='tabs__button' onClick={this.showSection.bind(this, index)}>
-                  {section.title}
-                </button>
-              </li>
-            )}
-          </ul>
-        </nav>
+        <ul className='tabs__menu' role='tablist'>
+          {sections.map((section, index) =>
+            <Tab
+              key={`tab-${index}`}
+              className='tabs__item'
+              id={section.id || index}
+              visible={this.state.visibleIndex === index}
+              handleClick={this.showSection.bind(this, index)}>
+                {section.title}
+            </Tab>
+          )}
+        </ul>
 
-        <Tab>
-          {this.props.sections[this.state.visibleIndex].content}
-        </Tab>
+        <div className='tabs__panels'>
+          {sections.map((section, index) =>
+            <Panel
+              key={`panel-${index}`}
+              className='tab'
+              id={section.id || index}
+              visible={this.state.visibleIndex === index}>
+                {section.content}
+            </Panel>
+          )}
+        </div>
       </div>
     );
   }
