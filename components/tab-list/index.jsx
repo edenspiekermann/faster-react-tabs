@@ -23,7 +23,7 @@ const TabList = React.createClass({
           <Tab
             key={`tab-${index}`}
             id={section.id || index}
-            selected={selectedIndex === index}
+            isSelected={selectedIndex === index}
             handleClick={handleClick}
             index={index}>
               {section.title}

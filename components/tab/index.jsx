@@ -9,17 +9,17 @@ const Tab = React.createClass({
       React.PropTypes.string,
       React.PropTypes.number
     ]).isRequired,
-    selected: React.PropTypes.bool
+    isSelected: React.PropTypes.bool
   },
 
   getDefaultProps () {
     return {
-      selected: false
+      isSelected: false
     };
   },
 
   render () {
-    const { id, selected, index, handleClick, children } = this.props;
+    const { id, isSelected, index, handleClick, children } = this.props;
 
     return (
       <li
@@ -27,7 +27,7 @@ const Tab = React.createClass({
         id={`tab-${id}`}
         role='tab'
         aria-controls={`panel-${id}`}
-        aria-selected={selected}
+        aria-selected={isSelected}
         onClick={() => handleClick(index)}
         tabIndex={0}>
         {children}
