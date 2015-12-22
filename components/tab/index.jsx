@@ -1,29 +1,41 @@
 import React from 'react';
+import Panel from '../tab-panel';
 
 const Tab = React.createClass({
   propTypes: {
-    id: React.PropTypes.string.isRequired,
-    visible: React.PropTypes.bool,
-    title: React.PropTypes.string,
-    children: React.PropTypes.node
+    children: React.PropTypes.node.isRequired,
+    handleClick: React.PropTypes.func.isRequired,
+    id: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]).isRequired,
+    className: React.PropTypes.string,
+    selected: React.PropTypes.bool
+  },
+
+  getDefaultProps () {
+    return {
+      selected: false
+    };
   },
 
   render () {
-    const { id, title, visible, children } = this.props;
+    const { id, selected, className, children } = this.props;
 
     return (
-      <div
-        className='tab'
-        role='tabpanel'
-        id={`panel-${id}`}
-        aria-labelledby={`tab-${id}`}
-        aria-hidden={!visible}>
-          {title}
-          {children}
-      </div>
+      <li
+        className={className}
+        key={`tab-${id}`}
+        id={`tab-${id}`}
+        role='tab'
+        aria-controls={`panel-${id}`}
+        aria-selected={selected}
+        onClick={this.handleClick}
+        tabIndex={0}>
+        {children}
+      </li>
     );
   }
-
 });
 
 export default Tab;
