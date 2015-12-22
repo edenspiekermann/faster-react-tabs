@@ -24,7 +24,7 @@ const TabList = React.createClass({
           <Panel
             key={`panel-${index}`}
             id={section.id || index}
-            visible={JS ? selectedIndex === index : true}>
+            isVisible={JS ? selectedIndex === index : true}>
               {!JS
                 ? <span>section.title</span>
                 : null}

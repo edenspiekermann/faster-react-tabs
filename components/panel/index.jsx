@@ -7,24 +7,24 @@ const Panel = React.createClass({
       React.PropTypes.string,
       React.PropTypes.number
     ]).isRequired,
-    visible: React.PropTypes.bool
+    isVisible: React.PropTypes.bool
   },
 
   getDefaultProps () {
     return {
-      visible: true
+      isVisible: true
     };
   },
 
   render () {
-    const { id, visible, children } = this.props;
+    const { id, isVisible, children } = this.props;
 
     return (
       <div
         role='tabpanel'
         id={`panel-${id}`}
         aria-labelledby={`tab-${id}`}
-        aria-hidden={!visible}>
+        aria-hidden={!isVisible}>
           {children}
       </div>
     );
