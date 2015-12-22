@@ -10,7 +10,8 @@
   "scripts": {
     "build": "rm -Rf dist/ && mkdir dist && webpack --optimize-minimize --progress --colors && cp example/index.html dist/ && cp example/bundle.min.js dist/ && node-sass --output-style compressed example/scss/index.scss example/css/index.css && mkdir -p dist/css && cp example/css/* dist/css/ && mkdir -p dist/images && cp example/images/* dist/images/",
     "watch": "webpack-dev-server --content-base dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "semistandard src"
   },
   "author": "edenspiekermann",
   "license": "MIT",
@@ -25,6 +26,7 @@
     "es6-symbol": "^2.0.1",
     "jsx-loader": "^0.13.1",
     "node-sass": "^3.2.0",
+    "semistandard": "^7.0.4",
     "webpack": "^1.8.4",
     "webpack-dev-server": "^1.8.0"
   },

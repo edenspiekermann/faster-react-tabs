@@ -1,19 +1,19 @@
 import React from 'react';
 
 const Tab = React.createClass({
-
   propTypes: {
-    title: React.PropTypes.string
+    title: React.PropTypes.string,
+    children: React.PropTypes.node
   },
 
-  render() {
+  render () {
     const { title } = this.props;
 
     return (
-      <div className="tab">
-        {title ?
-          <div>{title}</div>
-        : null}
+      <div className='tab'>
+        {title
+          ? <div>{title}</div>
+          : null}
 
         {this.props.children}
       </div>

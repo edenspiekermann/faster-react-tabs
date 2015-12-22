@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import Tab from '../tab';
 
 const Tabs = React.createClass({
-
   propTypes: {
     sections: React.PropTypes.oneOfType([
       React.PropTypes.array,
@@ -12,26 +11,25 @@ const Tabs = React.createClass({
     ]).isRequired
   },
 
-  getInitialState() {
+  getInitialState () {
     return {
       jsEnabled: false,
       visibleIndex: 0
     };
   },
 
-  componentDidMount() {
+  componentDidMount () {
     this.setState({ jsEnabled: true });
   },
 
-  showSection(index) {
+  showSection (index) {
     this.setState({ visibleIndex: index });
   },
 
-  render() {
-
-    if ( ! this.state.jsEnabled) {
+  render () {
+    if (!this.state.jsEnabled) {
       return (
-        <div className="tabs">
+        <div className='tabs'>
           {this.props.sections.map((section, index) =>
             <Tab title={section.title} key={index}>
               {section.content}
@@ -41,7 +39,7 @@ const Tabs = React.createClass({
       );
     }
 
-    function classes(index) {
+    function classes (index) {
       return classnames({
         'tabs__item': true,
         'tabs__item--active': this.state.visibleIndex === index
@@ -68,7 +66,6 @@ const Tabs = React.createClass({
       </div>
     );
   }
-
 });
 
 export default Tabs;
