@@ -5,7 +5,6 @@ const Panel = React.createClass({
     id: React.PropTypes.string.isRequired,
     visible: React.PropTypes.bool,
     title: React.PropTypes.string,
-    className: React.PropTypes.string,
     children: React.PropTypes.node
   },
 
@@ -16,11 +15,10 @@ const Panel = React.createClass({
   },
 
   render () {
-    const { id, title, visible, className, children } = this.props;
+    const { id, title, visible, children } = this.props;
 
     return (
       <div
-        className={className}
         role='tabpanel'
         id={`panel-${id}`}
         aria-labelledby={`tab-${id}`}

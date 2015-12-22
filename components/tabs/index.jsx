@@ -1,16 +1,23 @@
 import React from 'react';
-import Panel from '../tab-panel';
-import Tab from '../tab';
+import PanelList from '../panel-list';
+import TabList from '../tab-list';
 
 const Tabs = React.createClass({
   propTypes: {
-    sections: React.PropTypes.array.isRequired
+    sections: React.PropTypes.array.isRequired,
+    defaultIndex: React.PropTypes.number
+  },
+
+  getDefaultProps () {
+    return {
+      defaultIndex: 0
+    };
   },
 
   getInitialState () {
     return {
       jsEnabled: false,
-      visibleIndex: 0
+      selectedIndex: this.props.defaultIndex
     };
   },
 
@@ -19,54 +26,16 @@ const Tabs = React.createClass({
   },
 
   showSection (index) {
-    this.setState({ visibleIndex: index });
+    this.setState({ selectedIndex: index });
   },
 
   render () {
-    const { sections } = this.props;
-
-    if (!this.state.jsEnabled) {
-      return (
-        <div className='tabs'>
-          {sections.map((section, index) =>
-            <Panel
-              key={`panel-${index}`}
-              className='tab'
-              id={section.id || index}
-              title={section.title}>
-                {section.content}
-            </Panel>
-          )}
-        </div>
-      );
-    }
-
     return (
-      <div className='tabs'>
-        <ul className='tabs__menu' role='tablist'>
-          {sections.map((section, index) =>
-            <Tab
-              key={`tab-${index}`}
-              className='tabs__item'
-              id={section.id || index}
-              visible={this.state.visibleIndex === index}
-              handleClick={this.showSection.bind(this, index)}>
-                {section.title}
-            </Tab>
-          )}
-        </ul>
-
-        <div className='tabs__panels'>
-          {sections.map((section, index) =>
-            <Panel
-              key={`panel-${index}`}
-              className='tab'
-              id={section.id || index}
-              visible={this.state.visibleIndex === index}>
-                {section.content}
-            </Panel>
-          )}
-        </div>
+      <div>
+        {this.state.jsEnabled
+          ? <TabList {...this.props} {...this.state} handleClick={this.showSection} />
+          : null}
+        <PanelList {...this.props} {...this.state} />
       </div>
     );
   }

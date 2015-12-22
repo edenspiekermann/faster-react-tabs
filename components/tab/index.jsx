@@ -1,15 +1,14 @@
 import React from 'react';
-import Panel from '../tab-panel';
 
 const Tab = React.createClass({
   propTypes: {
     children: React.PropTypes.node.isRequired,
     handleClick: React.PropTypes.func.isRequired,
+    index: React.PropTypes.number.isRequired,
     id: React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.number
     ]).isRequired,
-    className: React.PropTypes.string,
     selected: React.PropTypes.bool
   },
 
@@ -20,17 +19,16 @@ const Tab = React.createClass({
   },
 
   render () {
-    const { id, selected, className, children } = this.props;
+    const { id, selected, index, handleClick, children } = this.props;
 
     return (
       <li
-        className={className}
         key={`tab-${id}`}
         id={`tab-${id}`}
         role='tab'
         aria-controls={`panel-${id}`}
         aria-selected={selected}
-        onClick={this.handleClick}
+        onClick={() => handleClick(index)}
         tabIndex={0}>
         {children}
       </li>
