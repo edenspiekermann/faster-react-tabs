@@ -16,13 +16,13 @@ const Tabs = React.createClass({
 
   getInitialState () {
     return {
-      jsEnabled: false,
+      JS: false,
       selectedIndex: this.props.defaultIndex
     };
   },
 
   componentDidMount () {
-    this.setState({ jsEnabled: true });
+    this.setState({ JS: true });
   },
 
   showSection (index) {
@@ -32,7 +32,7 @@ const Tabs = React.createClass({
   render () {
     return (
       <div>
-        {this.state.jsEnabled
+        {this.state.JS
           ? <TabList {...this.props} {...this.state} handleClick={this.showSection} />
           : null}
         <PanelList {...this.props} {...this.state} />
