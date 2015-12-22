@@ -6,3 +6,9 @@ li[role='tab'] {
 li[role='tab'][aria-selected='true'] {
   font-weight: bold;
 }
+
+li[role='tab'] > a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}

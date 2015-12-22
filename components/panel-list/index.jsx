@@ -22,7 +22,7 @@ const TabList = React.createClass({
       <div>
         {sections.map((section, index) =>
           <Panel
-            key={`panel-${index}`}
+            key={`panel-${section.id || index}`}
             id={section.id || index}
             isVisible={JS ? selectedIndex === index : true}>
               {!JS
