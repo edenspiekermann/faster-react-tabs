@@ -20,7 +20,7 @@ const Panel = React.createClass({
 
     return (
       <div
-        className={className}
+        className={className + '__panel'}
         role='tabpanel'
         id={`panel-${id}`}
         aria-labelledby={`tab-${id}`}

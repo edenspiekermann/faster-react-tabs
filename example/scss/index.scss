@@ -25,6 +25,9 @@ h2 {
   bottom: 2em;
 }
 
-@import "../../components/tab/index";
 @import "../../components/tabs/index";
+@import "../../components/tab-list/index";
+@import "../../components/tab/index";
+@import "../../components/panel-list/index";
+@import "../../components/panel/index";
 @import "../../components/example-content/index";
