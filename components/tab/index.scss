@@ -1,3 +1,7 @@
 .tab {
   font-size: 22px;
 }
+
+.tab[aria-hidden='true'] {
+  display: none;
+}
