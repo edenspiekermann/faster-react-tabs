@@ -54,9 +54,7 @@ const YourThing = React.createClass({
     ];
 
     return (
-      <div>
-        <Tabs sections={sections} />
-      </div>
+      <Tabs sections={sections} />
     );
   }
 
