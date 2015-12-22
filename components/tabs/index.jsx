@@ -5,14 +5,12 @@ import TabList from '../tab-list';
 const Tabs = React.createClass({
   propTypes: {
     sections: React.PropTypes.array.isRequired,
-    defaultIndex: React.PropTypes.number,
-    className: React.PropTypes.string
+    defaultIndex: React.PropTypes.number
   },
 
   getDefaultProps () {
     return {
-      defaultIndex: 0,
-      className: 'tabs'
+      defaultIndex: 0
     };
   },
 
@@ -33,7 +31,7 @@ const Tabs = React.createClass({
 
   render () {
     return (
-      <div className={this.props.className}>
+      <div>
         {this.state.jsEnabled
           ? <TabList {...this.props} {...this.state} handleClick={this.showSection} />
           : null}

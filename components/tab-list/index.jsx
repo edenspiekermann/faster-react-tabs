@@ -5,8 +5,7 @@ const TabList = React.createClass({
   propTypes: {
     sections: React.PropTypes.array.isRequired,
     handleClick: React.PropTypes.func.isRequired,
-    selectedIndex: React.PropTypes.number,
-    className: React.PropTypes.string
+    selectedIndex: React.PropTypes.number
   },
 
   getDefaultProps () {
@@ -16,14 +15,13 @@ const TabList = React.createClass({
   },
 
   render () {
-    const { className, selectedIndex, handleClick, sections } = this.props;
+    const { selectedIndex, handleClick, sections } = this.props;
 
     return (
-      <ul className={className + '__list'} role='tablist'>
+      <ul role='tablist'>
         {sections.map((section, index) =>
           <Tab
             key={`tab-${index}`}
-            className={className}
             id={section.id || index}
             selected={selectedIndex === index}
             handleClick={handleClick}

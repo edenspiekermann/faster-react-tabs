@@ -9,7 +9,6 @@ const Tab = React.createClass({
       React.PropTypes.string,
       React.PropTypes.number
     ]).isRequired,
-    className: React.PropTypes.string,
     selected: React.PropTypes.bool
   },
 
@@ -20,11 +19,10 @@ const Tab = React.createClass({
   },
 
   render () {
-    const { id, selected, className, index, handleClick, children } = this.props;
+    const { id, selected, index, handleClick, children } = this.props;
 
     return (
       <li
-        className={className + '__item'}
         key={`tab-${id}`}
         id={`tab-${id}`}
         role='tab'

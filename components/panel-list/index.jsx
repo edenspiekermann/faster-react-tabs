@@ -5,7 +5,6 @@ const TabList = React.createClass({
   propTypes: {
     sections: React.PropTypes.array.isRequired,
     selectedIndex: React.PropTypes.number.isRequired,
-    className: React.PropTypes.string,
     jsEnabled: React.PropTypes.bool
   },
 
@@ -17,14 +16,13 @@ const TabList = React.createClass({
   },
 
   render () {
-    const { className, selectedIndex, sections, jsEnabled } = this.props;
+    const { selectedIndex, sections, jsEnabled } = this.props;
 
     return (
-      <div className={className + '__panels'}>
+      <div>
         {sections.map((section, index) =>
           <Panel
             key={`panel-${index}`}
-            className={className}
             id={section.id || index}
             visible={jsEnabled ? selectedIndex === index : true}
             title={jsEnabled ? null : section.title}>
