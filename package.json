@@ -1,6 +1,6 @@
 {
   "name": "faster-react-tabs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A faster React tab component that doesn't use DOM refs. Written in ES6, transpiles down to ES5",
   "main": "components/tabs/index.jsx",
   "repository": {
