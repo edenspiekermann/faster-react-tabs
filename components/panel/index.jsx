@@ -22,7 +22,7 @@ const Panel = React.createClass({
     return (
       <div
         role='tabpanel'
-        id={`panel-${id}`}
+        id={id}
         aria-labelledby={`tab-${id}`}
         aria-hidden={!isVisible}>
           {children}

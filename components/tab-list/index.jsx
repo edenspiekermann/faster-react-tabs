@@ -21,7 +21,7 @@ const TabList = React.createClass({
         {sections.map((section, index) =>
           <Tab
             key={`tab-${section.id || index}`}
-            id={section.id || index}
+            id={'tab-' + (section.id || `panel-${index}`)}
             isSelected={selectedIndex === index}>
               {section.title}
           </Tab>

@@ -18,15 +18,16 @@ const Tab = React.createClass({
 
   render () {
     const { isSelected, id, children } = this.props;
+    const href = id.split('tab-')[1];
 
     return (
       <li
-        id={`tab-${id}`}
+        id={id}
         role='presentation'>
         <a
-          href={`#panel-${id}`}
+          href={'#' + href}
           role='tab'
-          aria-controls={`panel-${id}`}
+          aria-controls={href}
           aria-selected={isSelected}>
           {children}
         </a>

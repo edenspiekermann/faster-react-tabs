@@ -29,8 +29,9 @@ const Tabs = React.createClass({
 
     // Set up initial hash/index mapping
     this.props.sections.forEach((section, index) => {
-      this.targets.set(`#panel-${section.id || index}`, index);
-      this.indexes.set(index, `#panel-${section.id || index}`);
+      let query = '#' + (section.id || `panel-${index}`);
+      this.targets.set(query, index);
+      this.indexes.set(index, query);
     });
 
     // Handle hash change
