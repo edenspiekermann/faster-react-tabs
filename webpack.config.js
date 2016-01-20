@@ -1,8 +1,6 @@
-var jsxLoaders = ['babel-loader?stage=1'];
-
 module.exports = {
   cache: true,
-  entry: './example/app',
+  entry: './src/example/app',
   output: {
     filename: 'example/bundle.min.js'
   },
@@ -13,7 +11,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.jsx$/, loaders: jsxLoaders },
+      { test: /\.jsx$/, loaders: ['babel-loader'] },
     ]
   },
   resolve: {
