@@ -1,36 +1,25 @@
-# Simple + Clean React Tabs
+# Faster React Tabs
+
+Faster React Tabs is a flexible and context-agnostic React component used to render accessible and simple tabs. You can [play with the only demo](http://edenspiekermann.github.io/faster-react-tabs/).
+
+Making accessible tabs is not an easy task. Fortunately, this React component is built with all the good practices about tabs in mind. On top of that, it provides a non-JavaScript fallback for users with JS disabled or server-side rendering.
 
 [![npm version](https://badge.fury.io/js/faster-react-tabs.svg)](http://badge.fury.io/js/faster-react-tabs)
-
-[Demo here](http://edenspiekermann.github.io/faster-react-tabs/)
-
-- Written the "React Way" without hitting the DOM with `refs`.
-- ES6, transpiles down to ES5.
-- If your app renders server-side, then the tabs can just render as a list for non-JS users.
 
 ## Install
 
 ```sh
-$ npm i faster-react-tabs --save
+npm i faster-react-tabs --save
 ```
 
-**Get the example running locally:**
+## Nerdy technical details
 
-```sh
-$ cd faster-react-tabs/
-$ npm install
-$ npm run build
-$ npm run watch
-```
+- Written the “React Way” without hitting the DOM with `refs`.
+- Written in ES6, transpiled down to ES5.
 
-## Example: Drop-in `Tabs` component
-
-```sh
-$ npm i faster-react-tabs --save
-```
+## Example: drop-in `Tabs` component
 
 ```javascript
-'use strict'
 import React from 'react';
 import Tabs from 'faster-react-tabs';
 import ExampleContent from '../components/example-content/index.jsx';
@@ -61,4 +50,13 @@ const YourThing = React.createClass({
 });
 
 export default YourThing;
+```
+
+
+## Development
+
+```sh
+npm install
+npm run build
+npm run watch
 ```
