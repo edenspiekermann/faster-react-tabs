@@ -9,7 +9,7 @@ Making accessible tabs is not an easy task. Fortunately, this React component is
 ## Install
 
 ```sh
-npm i faster-react-tabs --save
+npm install faster-react-tabs --save
 ```
 
 ## Nerdy technical details
