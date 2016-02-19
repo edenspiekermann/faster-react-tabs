@@ -8,11 +8,12 @@
     "url": "https://github.com/edenspiekermann/faster-react-tabs.git"
   },
   "scripts": {
-    "build": "babel src/ -d lib/ && rm -Rf dist/ && mkdir dist && node node_modules/webpack/bin/webpack --optimize-minimize --progress --colors && cp src/example/index.html dist/ && mv src/example/bundle.min.js dist/ && mkdir -p dist/css/ && node node_modules/node-sass/bin/node-sass --output-style compressed src/example/scss/index.scss dist/css/index.css && mkdir -p dist/images && cp src/example/images/* dist/images/",
+    "build": "babel src/ -d lib/ && rm -Rf dist/ && mkdir dist && node node_modules/webpack/bin/webpack --optimize-minimize --progress --colors && cp src/example/index.html dist/ && mkdir -p dist/css/ && node node_modules/node-sass/bin/node-sass --output-style compressed src/example/scss/index.scss dist/css/index.css && mkdir -p dist/images && cp src/example/images/* dist/images/",
     "watch": "node node_modules/webpack-dev-server/bin/webpack-dev-server --content-base dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "semistandard src/",
-    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "deploy": "git subtree push --prefix dist/ origin gh-pages",
+    "predeploy": "npm run build",
     "prepublish": "npm run build"
   },
   "files": [

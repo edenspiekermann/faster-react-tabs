@@ -2,7 +2,7 @@ module.exports = {
   cache: true,
   entry: './src/example/app',
   output: {
-    filename: 'example/bundle.min.js'
+    filename: 'dist/bundle.min.js'
   },
   devServer: {
     noInfo: true,
