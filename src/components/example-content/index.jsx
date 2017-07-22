@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-const ExampleContent = React.createClass({
-  propTypes: {
-    text: React.PropTypes.string.isRequired,
-    image: React.PropTypes.string.isRequired
-  },
+class ExampleContent extends React.Component {
+  static propTypes = {
+    text: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+  };
 
   render () {
     return (
@@ -14,6 +15,6 @@ const ExampleContent = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default ExampleContent;

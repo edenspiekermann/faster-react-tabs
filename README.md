@@ -24,7 +24,7 @@ import React from 'react';
 import Tabs from 'faster-react-tabs';
 import ExampleContent from '../components/example-content/index.jsx';
 
-const YourThing = React.createClass({
+class YourThing extends React.Component {
 
   render() {
     const sections = [
@@ -47,7 +47,7 @@ const YourThing = React.createClass({
     );
   }
 
-});
+}
 
 export default YourThing;
 ```
