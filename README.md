@@ -56,7 +56,7 @@ export default YourThing;
 ## Development
 
 ```sh
-npm install
-npm run build
-npm run watch
+yarn install
+yarn build
+yarn watch
 ```
