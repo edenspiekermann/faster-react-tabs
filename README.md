@@ -56,7 +56,7 @@ export default YourThing;
 ## Development
 
 ```sh
-npm run install
+npm install
 npm run build
 npm run watch
 ```
