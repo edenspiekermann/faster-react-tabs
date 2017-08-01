@@ -1,20 +1,22 @@
+var path = require('path');
+
 module.exports = {
-  cache: true,
-  entry: './src/example/app',
+  entry: './src/example/app.jsx',
   output: {
-    filename: 'dist/bundle.min.js'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/assets/',
+    filename: 'bundle.min.js'
   },
-  devServer: {
-    noInfo: true,
-    inline: true,
-    port: 3000
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
   module: {
     loaders: [
-      { test: /\.jsx$/, loaders: ['babel-loader'] },
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
     ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json']
   }
 };

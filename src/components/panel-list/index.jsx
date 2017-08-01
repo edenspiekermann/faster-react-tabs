@@ -1,19 +1,18 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Panel from '../panel';
 
-const TabList = React.createClass({
-  propTypes: {
-    sections: React.PropTypes.array.isRequired,
-    selectedIndex: React.PropTypes.number,
-    JS: React.PropTypes.bool
-  },
+class TabList extends React.Component {
+  static defaultProps = {
+    selectedIndex: 0,
+    JS: true
+  };
 
-  getDefaultProps () {
-    return {
-      selectedIndex: 0,
-      JS: true
-    };
-  },
+  static propTypes = {
+    sections: PropTypes.array.isRequired,
+    selectedIndex: PropTypes.number,
+    JS: PropTypes.bool
+  };
 
   render () {
     const { sections, selectedIndex, JS } = this.props;
@@ -25,15 +24,15 @@ const TabList = React.createClass({
             key={`panel-${section.id || index}`}
             id={section.id || `panel-${index}`}
             isVisible={JS ? selectedIndex === index : true}>
-              {!JS
+            {!JS
                 ? <span>{section.title}</span>
                 : null}
-              {section.content}
+            {section.content}
           </Panel>
         )}
       </div>
     );
   }
-});
+}
 
 export default TabList;

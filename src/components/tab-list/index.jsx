@@ -1,17 +1,16 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Tab from '../tab';
 
-const TabList = React.createClass({
-  propTypes: {
-    sections: React.PropTypes.array.isRequired,
-    selectedIndex: React.PropTypes.number
-  },
+class TabList extends React.Component {
+  static defaultProps = {
+    selectedIndex: 0
+  };
 
-  getDefaultProps () {
-    return {
-      selectedIndex: 0
-    };
-  },
+  static propTypes = {
+    sections: PropTypes.array.isRequired,
+    selectedIndex: PropTypes.number
+  };
 
   render () {
     const { sections, selectedIndex } = this.props;
@@ -22,13 +21,14 @@ const TabList = React.createClass({
           <Tab
             key={`tab-${section.id || index}`}
             id={'tab-' + (section.id || `panel-${index}`)}
-            isSelected={selectedIndex === index}>
-              {section.title}
+            isSelected={selectedIndex === index}
+          >
+            {section.title}
           </Tab>
         )}
       </ul>
     );
   }
-});
+}
 
 export default TabList;

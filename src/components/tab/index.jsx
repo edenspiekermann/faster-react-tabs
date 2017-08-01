@@ -1,20 +1,19 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-const Tab = React.createClass({
-  propTypes: {
-    children: React.PropTypes.node.isRequired,
-    id: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
-    ]).isRequired,
-    isSelected: React.PropTypes.bool
-  },
+class Tab extends React.Component {
+  static defaultProps = {
+    isSelected: false
+  };
 
-  getDefaultProps () {
-    return {
-      isSelected: false
-    };
-  },
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    id: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]).isRequired,
+    isSelected: PropTypes.bool
+  };
 
   render () {
     const { isSelected, id, children } = this.props;
@@ -34,6 +33,6 @@ const Tab = React.createClass({
       </li>
     );
   }
-});
+}
 
 export default Tab;

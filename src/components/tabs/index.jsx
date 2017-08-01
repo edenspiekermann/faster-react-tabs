@@ -1,11 +1,15 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+import createReactClass from 'create-react-class';
 import PanelList from '../panel-list';
 import TabList from '../tab-list';
 
-const Tabs = React.createClass({
+const Tabs = createReactClass({
+  displayName: 'Tabs',
+
   propTypes: {
-    sections: React.PropTypes.array.isRequired,
-    initialIndex: React.PropTypes.number
+    sections: PropTypes.array.isRequired,
+    initialIndex: PropTypes.number
   },
 
   getDefaultProps () {
@@ -22,6 +26,16 @@ const Tabs = React.createClass({
       JS: false,
       selectedIndex: this.props.initialIndex
     };
+  },
+
+  handleHash () {
+    if (!window) return;
+
+    this.showSection(this.targets.get(window.location.hash) || 0);
+  },
+
+  showSection (index) {
+    this.setState({ selectedIndex: index });
   },
 
   componentDidMount () {
@@ -50,22 +64,10 @@ const Tabs = React.createClass({
     window.removeEventListener('hashchange', this.handleHash, false);
   },
 
-  handleHash () {
-    if (!window) return;
-
-    this.showSection(this.targets.get(window.location.hash) || 0);
-  },
-
-  showSection (index) {
-    this.setState({ selectedIndex: index });
-  },
-
   render () {
     return (
       <div>
-        {this.state.JS
-          ? <TabList {...this.props} {...this.state} />
-          : null}
+        {this.state.JS ? <TabList {...this.props} {...this.state} /> : null}
         <PanelList {...this.props} {...this.state} />
       </div>
     );

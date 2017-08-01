@@ -1,20 +1,19 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-const Panel = React.createClass({
-  propTypes: {
-    children: React.PropTypes.node.isRequired,
-    id: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
-    ]).isRequired,
-    isVisible: React.PropTypes.bool
-  },
+class Panel extends React.Component {
+  static defaultProps = {
+    isVisible: true
+  };
 
-  getDefaultProps () {
-    return {
-      isVisible: true
-    };
-  },
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    id: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]).isRequired,
+    isVisible: PropTypes.bool
+  };
 
   render () {
     const { id, isVisible, children } = this.props;
@@ -25,11 +24,10 @@ const Panel = React.createClass({
         id={id}
         aria-labelledby={`tab-${id}`}
         aria-hidden={!isVisible}>
-          {children}
+        {children}
       </div>
     );
   }
-
-});
+}
 
 export default Panel;
